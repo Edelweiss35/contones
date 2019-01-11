@@ -1,0 +1,29 @@
+<a href="#" class="tiny button" ng-click="onBack()"><i class="fi-arrow-left large">&nbsp;&nbsp;</i>Back</a>
+<a href="#" class="tiny button" ng-click="onThumbnails()"><i class="fi-thumbnails large">&nbsp;&nbsp;</i>Thumbnails</a>
+
+<div class="filesystem">
+  
+    <div class="large-6 columns">
+      <h6>{{path | prefixPath}} </h6>
+      <table>
+        <tbody>
+          <tr ng-repeat="(index, directory) in directories">
+            <td class="directory file" ng-click="onDirectory(directory)">
+              <i class="large fi-folder"></i>&nbsp;{{directory.path | getBasename }}
+            </td> 
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <div class="large-6 columns">
+      <ul class="small-block-grid-4">
+        <li ng-repeat="(index, image) in images">
+          <a href="/contone/{{image.path}}" class="tiny button">
+            <i class="large fi-photo"></i>&nbsp;{{image.path | getBasename }}
+          </a>
+        </li>
+      </ul>
+    </div>
+  
+</div>
